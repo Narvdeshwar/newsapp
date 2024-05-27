@@ -4,6 +4,7 @@ import Spinner from "./Spinner";
 import PropTypes from "prop-types";
 import API_KEY from "./Api";
 
+
 export default class News extends Component {
   static defaultProps = {
     country: "in",
@@ -27,6 +28,7 @@ export default class News extends Component {
     console.log("componnent did mount");
     this.setState({ loading: true });
     let URL = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${API_KEY}&page=${this.page}&pageSize=${this.props.pageSize}`;
+    console.log(URL);
     let data = await fetch(URL);
     let res = await data.json();
     this.setState({
