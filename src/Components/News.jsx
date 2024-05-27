@@ -64,7 +64,7 @@ export default class News extends Component {
         {this.state.loading && <Spinner />}
         <div className="row">
           {!this.state.loading &&
-            articles.map((e, index) => {
+            articles?.map((e, index) => {
               return (
                 <div className="col-sm-4  my-3" key={index}>
                   <Newsitem
